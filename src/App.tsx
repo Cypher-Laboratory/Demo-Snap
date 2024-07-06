@@ -208,6 +208,18 @@ const App: React.FC = () => {
         <Button onClick={handleSagSign}>Sign using SAG</Button>
         <Button onClick={handleLsagSign}>Sign using LSAG</Button>
       </ButtonRow>
+      {sag &&
+        <div>
+          <Output>base64 SAG Signature:</Output>
+          <Output>{sag.slice(0,150)}...</Output>
+        </div>
+      }
+      {lsag &&
+        <div>
+          <Output>base64 LSAG Signature:</Output>
+          <Output>{lsag.slice(0,150)}...</Output>
+        </div>
+      }
 
       <ButtonRow>
         <Button onClick={handleVerifySag}>Verify SAG</Button>
